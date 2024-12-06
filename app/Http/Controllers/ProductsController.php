@@ -82,16 +82,6 @@ class ProductsController extends Controller
 
     }
 
-    public function edit($id){
-        \Session::flash('toastr', true);
-
-        if(!$product){
-            return redirect()->route('products.index')->with(['toastr' => true, 'type' => 'error', 'message' => 'products not found']);
-        }
-
-        return view ('products/edit',compact());
-    }
-
     public function update(Request $request) {
 
         \Session::flash('toastr', true);
